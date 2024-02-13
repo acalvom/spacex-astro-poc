@@ -1,9 +1,9 @@
 ---
 interface Props {
-  paths: string[];
+  paths: string[]
 }
 
-const { paths } = Astro.props;
+const { paths } = Astro.props
 ---
 
 <svg
@@ -13,7 +13,8 @@ const { paths } = Astro.props;
   stroke="currentColor"
   fill="none"
   stroke-linecap="round"
-  stroke-linejoin="round">
+  stroke-linejoin="round"
+>
   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
   {paths.map((path) => <path d={path} />)}
 </svg>

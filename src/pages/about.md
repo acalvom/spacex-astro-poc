@@ -1,6 +1,6 @@
 ---
 title: 'Space X About'
-layout: '../layouts/LayoutMarkdown.astro'
+layout: '@layouts/LayoutMarkdown.astro'
 ---
 
 # About SpaceX Launches App

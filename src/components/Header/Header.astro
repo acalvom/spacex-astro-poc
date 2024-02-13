@@ -1,33 +1,37 @@
 ---
-import HeaderButton from "./HeaderButton.astro";
-import HeaderIcon from "./HeaderIcon.astro";
+import HeaderButton from './HeaderButton.astro'
+import HeaderIcon from './HeaderIcon.astro'
 
 const rocketIconPaths = [
-  "M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3",
-  "M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3",
-  "M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",
-];
+  'M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3',
+  'M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3',
+  'M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0'
+]
 
 const aboutIconPaths = [
-  "M19.875 6.27c.7 .398 1.13 1.143 1.125 1.948v7.284c0 .809 -.443 1.555 -1.158 1.948l-6.75 4.27a2.269 2.269 0 0 1 -2.184 0l-6.75 -4.27a2.225 2.225 0 0 1 -1.158 -1.948v-7.285c0 -.809 .443 -1.554 1.158 -1.947l6.75 -3.98a2.33 2.33 0 0 1 2.25 0l6.75 3.98h-.033z",
-  "M12 9h.01",
-  "M11 12h1v4h1",
-];
+  'M19.875 6.27c.7 .398 1.13 1.143 1.125 1.948v7.284c0 .809 -.443 1.555 -1.158 1.948l-6.75 4.27a2.269 2.269 0 0 1 -2.184 0l-6.75 -4.27a2.225 2.225 0 0 1 -1.158 -1.948v-7.285c0 -.809 .443 -1.554 1.158 -1.947l6.75 -3.98a2.33 2.33 0 0 1 2.25 0l6.75 3.98h-.033z',
+  'M12 9h.01',
+  'M11 12h1v4h1'
+]
 
-const historyIconPaths = ["M12 8l0 4l2 2", "M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5"];
+const historyIconPaths = ['M12 8l0 4l2 2', 'M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5']
 ---
 
 <header class="max-w-2xl mx-auto px-4 py-8 lg:px-8 lg:py-16">
   <div class="mx-auto text-center mb-8 lg:mb-10">
-    <h2 class="text-4xl lg:text-5xl tracking-tight text-white font-extrabold mb-4">Space X Launches 🚀</h2>
-    <p class="text-sm lg:text-md text-gray-300 font-light tracking-wide">Last launches are listed in this page</p>
+    <h2 class="text-4xl lg:text-5xl tracking-tight text-white font-extrabold mb-4">
+      Space X Launches 🚀
+    </h2>
+    <p class="text-sm lg:text-md text-gray-300 font-light tracking-wide">
+      Last launches are listed in this page
+    </p>
   </div>
   <nav class="w-full flex flex-col items-center md:flex-row justify-between">
     <HeaderButton path="/">
       <HeaderIcon slot="before" paths={rocketIconPaths} />
       Últimos lanzamientos
     </HeaderButton>
-    
+
     <HeaderButton path="/about">
       <HeaderIcon slot="before" paths={aboutIconPaths} />
       About
