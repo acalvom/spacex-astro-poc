@@ -3,7 +3,7 @@
   "trailingComma": "none",
   "semi": false,
   "printWidth": 100,
-  "pluginSearchDirs": false,
   "tabWidth": 2,
-  "bracketSpacing": true
-}
+  "bracketSpacing": true,
+  "plugins": ["prettier-plugin-astro"]
+} 
