@@ -1,0 +1,55 @@
+---
+import Layout from './Layout.astro'
+import type { MarkdownLayoutProps } from 'astro'
+
+type Props = MarkdownLayoutProps<{
+  title: string
+}>
+
+const { frontmatter } = Astro.props
+---
+
+<Layout title={frontmatter.title}>
+  <slot />
+</Layout>
+
+<style is:inline>
+  main {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  h2 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+  h3 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 4px;
+    font-style: italic;
+  }
+  p {
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 12px;
+  }
+  ul {
+    font-weight: 200;
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 12px;
+  }
+  li::marker {
+    content: '👲 ';
+    font-size: 1.2rem;
+  }
+</style>
