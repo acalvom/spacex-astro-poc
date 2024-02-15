@@ -1,5 +1,6 @@
 ---
 interface Props {
+  id: string
   name: string
   flight_number: number
   details: string | null
@@ -7,11 +8,12 @@ interface Props {
   image: string
 }
 
-const { name, flight_number, details, success, image } = Astro.props
+const { id, name, flight_number, details, success, image } = Astro.props
 ---
 
 <article class="mx-1 my-4 max-w-sm md:w-1/2 lg:w-1/3">
-  <div
+  <a
+    href={`/launch/${id}`}
     class="flex flex-col p-8 border rounded-md shadow-md shadow-gray-400 duration-300 hover:-translate-y-1"
   >
     <img src={image} alt={name} />
@@ -33,5 +35,5 @@ const { name, flight_number, details, success, image } = Astro.props
     <p class="my-1 font-light leading-6 line-clamp-2 text-gray-300">
       {details ? details : 'No detailes provided related to this launch'}
     </p>
-  </div>
+  </a>
 </article>

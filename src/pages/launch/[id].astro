@@ -1,0 +1,21 @@
+---
+import { getLatestLaunches, getLaunchById } from '@services/spacex'
+import { type Doc, type TLaunchDetails } from '@interface/api'
+import Layout from '@layouts/Layout.astro'
+import LaunchDetails from '@components/Launches/LaunchDetails.astro'
+
+//* Using getStaticPaths to generate the paths for the static pages
+export async function getStaticPaths() {
+  const launches = await getLatestLaunches()
+  return launches.map((launch: Doc) => ({
+    params: { id: launch.id }
+  }))
+}
+
+const { id } = Astro.params
+const launch = (await getLaunchById(id)) as TLaunchDetails
+---
+
+<Layout title=`Space X - ${launch.name}`>
+  <LaunchDetails launch={launch} />
+</Layout>

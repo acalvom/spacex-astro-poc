@@ -1,19 +1,8 @@
 ---
-import { type Doc, type SpaceXAPIResponse } from '@interfaces/api'
-import LaunchCard  from './LaunchCard.astro'
+import { getLatestLaunches } from '@services/spacex'
+import LaunchCard from './LaunchCard.astro'
 
-const response = await fetch('https://api.spacexdata.com/v4/launches/query', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({
-    options: {
-      limit: 10,
-      sort: { date_unix: 'asc' }
-    }
-  })
-})
-const data: SpaceXAPIResponse = await response.json()
-const lastLaunches: Doc[] = data.docs
+const latestLaunches = await getLatestLaunches()
 ---
 
 <section class="w-full p-4 mx-auto">
@@ -22,8 +11,9 @@ const lastLaunches: Doc[] = data.docs
   </h3>
   <div class="flex flex-wrap justify-evenly mx-4">
     {
-      lastLaunches.map(({ name, flight_number, details, success, links }) => (
+      latestLaunches.map(({ id, name, flight_number, details, success, links }) => (
         <LaunchCard
+          id={id}
           name={name}
           flight_number={flight_number}
           details={details}
