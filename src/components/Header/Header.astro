@@ -13,8 +13,6 @@ const aboutIconPaths = [
   'M12 9h.01',
   'M11 12h1v4h1'
 ]
-
-const historyIconPaths = ['M12 8l0 4l2 2', 'M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5']
 ---
 
 <header class="max-w-2xl mx-auto px-4 py-8 lg:px-8 lg:py-16">
@@ -35,11 +33,6 @@ const historyIconPaths = ['M12 8l0 4l2 2', 'M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5']
     <HeaderButton path="/about">
       <HeaderIcon slot="before" paths={aboutIconPaths} />
       About
-    </HeaderButton>
-
-    <HeaderButton path="/history">
-      <HeaderIcon slot="before" paths={historyIconPaths} />
-      Antiguos lanzamientos
     </HeaderButton>
   </nav>
 </header>
