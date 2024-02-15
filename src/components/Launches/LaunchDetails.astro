@@ -1,6 +1,7 @@
 ---
 import { formatDate } from '@utils/date'
 import { type TLaunchDetails } from '@interface/api'
+import StatusBadge from '@components/Shared/StatusBadge.astro'
 
 interface Props {
   launch: TLaunchDetails
@@ -19,19 +20,11 @@ const { name, flight_number, date_utc, details, success, links } = launch
     class="flex flex-row justify-between items-center w-full max-w-sm mb-4 border border-gray-400 bg-gray-800 rounded-md px-4"
   >
     <p>{formatDate(`${date_utc}`)}</p>
-    <span
-      class:list={[
-        'w-fit text-xs font-medium my-2 px-2.5 py-0.5 rounded',
-        {
-          'bg-green-100 text-green-800': success,
-          'bg-red-100 text-red-800': !success
-        }
-      ]}
-    >
-      {success ? 'Success' : 'Fail'}
-    </span>
+    <StatusBadge success={success} />
   </div>
-  <p class="my-4 font-light leading-6 text-gray-300">{details}</p>
+  <p class="my-4 font-light leading-6 text-gray-300">
+    {details ? details : 'No detailes provided related to this launch'}
+  </p>
   <footer class="flex flex-row w-full justify-around pt-6 border-t-2 border-gray-400">
     <a
       class="flex flex-col px-4 py-2 border-b rounded-md hover:shadow-md hover:shadow-gray-400 hover:bg-gray-900 duration-300 hover:-translate-y-1"
