@@ -1,8 +1,7 @@
 # Space X Launches 🚀 - An Astro App
 
 ## 📚 About
-A simple app to display SpaceX launches using Astro, a modern front-end framework for faster websites.
-Responsive, fast, and SEO-friendly.
+Based on the [Astro midudev](https://www.youtube.com/watch?v=RB5tR_nqUEw) tutorial, this is a simple responsive app made with [Astro](https://astro.build/), a modern front-end framework for faster websites, to display SpaceX launches. It uses the [SpaceX API](https://github.com/r-spacex/SpaceX-API/tree/master/docs) to fetch the data and display it in a modern, responsive, and SEO-friendly way.
 
 
 ![How it works](./public/how-it.gif)
